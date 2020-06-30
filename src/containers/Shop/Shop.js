@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Item from '../../components/Item/Item';
 import img from '../../assets/images/image1.jpeg';
+import Header from '../../components/Header/Header';
 import './Shop.css';
 
 class Shop extends Component {
@@ -43,27 +44,31 @@ class Shop extends Component {
       ],
     };
   }
+
   handleToggleFavourites = (id) => {
-    const update = this.state.products.map(product => {
+    const update = this.state.products.map((product) => {
       if (product.id === id) {
-        return {...product, inFavorites: !product.inFavorites}
+        return { ...product, inFavorites: !product.inFavorites };
       }
       return product;
-    })
-    this.setState({ products: update});
+    });
+    this.setState({ products: update });
   };
 
   handleToggleCart = (id) => {
-     const update = this.state.products.map((product) => {
-       if (product.id === id) {
-         return { ...product, inCart: !product.inCart };
-       }
-       return product;
-     });
-     this.setState({ products: update });
+    const update = this.state.products.map((product) => {
+      if (product.id === id) {
+        return { ...product, inCart: !product.inCart };
+      }
+      return product;
+    });
+    this.setState({ products: update });
   };
 
   render() {
+    let favs = this.state.products.filter((product) => product.inFavorites)
+      .length;
+    let cart = this.state.products.filter((product) => product.inCart).length;
     const products = this.state.products.map((product) => (
       <Item
         key={product.id}
@@ -76,7 +81,12 @@ class Shop extends Component {
         toggleCart={() => this.handleToggleCart(product.id)}
       />
     ));
-    return <div className='Shop'>{products}</div>;
+    return (
+      <Fragment>
+        <Header favorites={favs} cart={cart} />
+        <div className='Shop'>{products}</div>
+      </Fragment>
+    );
   }
 }
 
