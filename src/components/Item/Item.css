@@ -1,0 +1,62 @@
+.Item {
+  max-width: 300px;
+  height: auto;
+  position: relative;
+  box-shadow: 4px 4px 10px #111111de;
+}
+
+.Item .Link .Fav, 
+.Item .Link .Shopping-cart{
+  color: #fff;
+  display: block;
+  margin: 3px 0;
+  border: 1px solid ;
+  padding: 10px;
+  text-align: center;
+}
+
+.Description{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  height: 70%;
+  color: #ffffff;
+  overflow: hidden;
+  background: #000000d7;
+  opacity: 0;
+  transition: opacity .5s;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Description:hover{
+  opacity: 1;
+}
+
+.Item img{
+  max-width: 100%;
+  opacity: 1;
+}
+
+.Item>div{
+  position: relative;
+  /* padding: ; */
+}
+
+.Item .Link{
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  background-color: #303030;
+}
+.Item h3{
+  font-weight: 500;
+}

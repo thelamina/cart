@@ -1,0 +1,39 @@
+.Header{
+  background-color: transparent;
+  height: 9vh;
+  box-shadow: 3px 3px 6px #00000023;
+  padding: 10px;
+}
+.Header nav{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.Header .Logo{
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.Header nav ul{
+  list-style: none;
+  display: flex;
+}
+
+.Header nav ul li {
+  margin: 10px;
+}
+
+.Header nav ul li a{
+  color: #222;
+}
+
+.Header nav ul li a:hover{
+  color: #18181888;
+}
